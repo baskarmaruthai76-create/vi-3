@@ -139,7 +139,7 @@ export const Header = () => {
                   <a
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
-                    className={`flex items-center gap-1 text-xl font-semibold hover:scale-105 transition-colors ${navTextClass(isActive)}`}
+                    className={`flex  items-center gap-1 text-xl font-semibold hover:scale-105 transition-colors ${navTextClass(isActive)}`}
                   >
                     {item.label}
                     {item.submenu && <ChevronDown className="w-4 h-4" />}
@@ -156,7 +156,7 @@ export const Header = () => {
                           transition={{ duration: 0.2 }}
                           className="absolute top-full left-0 pt-4 w-64"
                         >
-                          <div className="bg-gradient-to-r from-secondary/90 to-secondary p-2 rounded-xl shadow-2xl">
+                          <div className="bg-gradient-to-r max-h-[50vh] overflow-y-auto scrollbar-hide from-secondary/90 to-secondary p-2 rounded-xl shadow-2xl">
                             {item.submenu.map((subItem) => (
                               <a
                                 key={subItem.label}

@@ -7,6 +7,7 @@ import { lazy, Suspense } from "react";
 // import { servicesConfig } from "@/config/serviceConfig";
 import ScrollToTop from "./components/ScrollToTop";
 import Chatbot from "./components/Chatbot";
+import CustomCursor from "./components/CustomCursor";
 
 // Lazy load main pages
 const Index = lazy(() => import("./pages/Index"));
@@ -134,6 +135,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <CustomCursor/>
         <Suspense fallback={<PageLoader />}>
           <Routes>
           <Route path="/home" element={<Navigate to="/" replace />} />

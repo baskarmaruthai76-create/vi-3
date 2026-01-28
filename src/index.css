@@ -164,6 +164,16 @@
            transition-all duration-300 hover:bg-white/10 hover:border-white/50;
   }
 
+  /* Hide scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
   /* Card styles */
   .service-card {
     @apply bg-card rounded-2xl p-6 transition-all duration-300 
