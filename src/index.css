@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  :root {
+    /* Core brand colors - Deep tech navy with teal accents */
+    --background: 220 25% 97%;
+    --foreground: 222 47% 11%;
+  
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Teal primary - tech-forward accent */
+    --primary: 166 76% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 20% 94%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 220 15% 91%;
+    --muted-foreground: 220 10% 45%;
+
+    /* Purple accent for gradients */
+    --accent: 280 65% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 166 76% 42%;
+
+    --radius: 0.75rem;
+
+    /* Hero & dark section colors */
+    --hero-bg: 220 30% 6%;;
+    --hero-foreground: 0 0% 100%;
+    --hero-muted: 220 20% 70%;
+
+    /* Gradient colors */
+    --gradient-start: 166 76% 42%;
+    --gradient-mid: 200 80% 50%;
+    --gradient-end: 280 65% 60%;
+
+    /* News bar */
+    --news-bg: 166 76% 42%;
+    --news-accent: 340 80% 55%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 166 76% 42%;
+  }
+
+  .dark {
+    --background: 225 50% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 225 45% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 225 45% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 166 76% 50%;
+    --primary-foreground: 225 50% 8%;
+
+    --secondary: 225 40% 18%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 225 35% 20%;
+    --muted-foreground: 220 15% 65%;
+
+    --accent: 280 65% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 225 30% 22%;
+    --input: 225 30% 22%;
+    --ring: 166 76% 50%;
+
+    --sidebar-background: 225 45% 10%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 166 76% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 225 35% 15%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 225 30% 18%;
+    --sidebar-ring: 166 76% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer components {
+  /* Hero section styles */
+  .hero-gradient {
+    background: linear-gradient(135deg, 
+      hsl(var(--hero-bg)) 0%, 
+      hsl(225 45% 18%) 50%,
+      hsl(240 40% 15%) 100%
+    );
+  }
+
+  .hero-mesh {
+    background-image: 
+      radial-gradient(ellipse at 80% 20%, hsla(var(--gradient-start), 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 20% 80%, hsla(var(--gradient-end), 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at 60% 60%, hsla(var(--gradient-mid), 0.08) 0%, transparent 40%);
+  }
+
+  /* Text gradient */
+  .text-gradient {
+    background: linear-gradient(90deg, 
+      hsl(var(--primary)) 0%, 
+      hsl(var(--gradient-mid)) 50%,
+      hsl(var(--accent)) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Button variants */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-full font-semibold 
+           transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 
+           hover:scale-105 active:scale-95;
+  }
+
+  .btn-outline-light {
+    @apply border-2 border-white/30 text-white px-6 py-3 rounded-full font-semibold 
+           transition-all duration-300 hover:bg-white/10 hover:border-white/50;
+  }
+
+  /* Card styles */
+  .service-card {
+    @apply bg-card rounded-2xl p-6 transition-all duration-300 
+           hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1
+           border border-border/50;
+  }
+
+  /* Glass effect */
+ /* Premium card glow */
+.service-card:hover {
+  box-shadow: 0 25px 50px -20px hsl(var(--primary) / 0.35);
+}
+
+/* Enhanced glass */
+.glass {
+  @apply bg-white/10 backdrop-blur-xl border border-white/10 shadow-lg;
+}
+
+
+  /* News bar */
+  .news-bar {
+     background: linear-gradient(90deg, 
+     hsl(var(--gradient-mid)) 0%,
+     hsl(var(--primary)) 50%, 
+      hsl(var(--accent)) 100%
+    );
+  }
+
+  /* Stats section gradient */
+  .stats-gradient {
+    background: linear-gradient(180deg, 
+      hsl(var(--background)) 0%,
+      hsl(220 25% 95%) 100%
+    );
+  }
+
+  /* Partners section */
+  .partners-gradient {
+    background: linear-gradient(180deg, 
+      hsl(220 25% 95%) 0%,
+      hsl(var(--background)) 100%
+    );
+  }
+
+  /* CTA section */
+  .cta-gradient {
+    background: linear-gradient(135deg, 
+      hsl(var(--hero-bg)) 0%, 
+      hsl(225 45% 15%) 50%,
+      hsl(250 40% 18%) 100%
+    );
+  }
+
+  /* Animated underline */
+  .animated-underline {
+    @apply relative;
+  }
+  
+  .animated-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+  
+  .animated-underline:hover::after {
+    @apply w-full;
+  }
+
+  /* Infinite scroll animation for logos */
+  .scroll-container {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+}
+
+@layer utilities {
+   @keyframes ticker {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-ticker {
+    animation: ticker 25s linear infinite;
+  }
+  /* Animation delays */
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+}
+
+
+/* ===================================
+   ADD THIS TO YOUR globals.css
+   Simple Gradient Border on Hover
+   =================================== */
+
+@layer components {
+  /* Gradient border wrapper - just the border effect */
+  .gradient-border {
+    @apply relative;
+  }
+
+  /* Animated gradient border that appears on hover */
+  .gradient-border::before {
+    content: '';
+    @apply absolute -inset-0.5 rounded-3xl opacity-0 blur transition-all duration-500;
+    background: linear-gradient(to right, 
+      hsl(var(--primary)), 
+      hsl(var(--accent)), 
+      hsl(var(--gradient-end))
+    );
+    z-index: 0;
+  }
+
+  .gradient-border:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Make sure child content is above the border */
+  .gradient-border > * {
+    @apply relative;
+    z-index: 1;
+  }
+}
+
+/* ===================================
+   USAGE EXAMPLE
+   =================================== */
+
+/*
+Simply wrap your existing card with the gradient-border class:
+
+<div className="gradient-border">
+  <div className="bg-white border-2 border-slate-200 rounded-3xl p-8 transition-all duration-500 hover:border-transparent">
+    Your card content here
+  </div>
+</div>
+
+TIPS:
+- Add `hover:border-transparent` to your inner card for smooth transition
+- The inner card should have rounded corners that match (rounded-3xl)
+- Works with any existing card structure
+- Customize colors by changing the CSS variables
+*/
