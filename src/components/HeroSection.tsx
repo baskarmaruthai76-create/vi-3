@@ -8,14 +8,17 @@ import heroCloud from "@/assets/light/hero-cloud.jpg";
 import heroApplication from "@/assets/light/hero-application.jpg";
 import heroData from "@/assets/light/hero-data.jpg";
 import heroAi from "@/assets/light/hero-ai.jpg";
+import cyberSecurityImg from "@/assets/light/hero-cybersecurity.jpg";
+import costOptimizeImg from "@/assets/light/hero-cost-optimization.jpg"
+import aiworkflowImg from "@/assets/light/hero-workflow-automation.jpg"
 import { NewsTicker } from "./NewsTicker";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 const heroDataNew ='https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop'
 
-const transformWords = ["Digital", "Cloud", "Application", "Data", "AI"];
-const heroImages = [heroDigital, heroCloud, heroApplication, heroData, heroAi];
+const transformWords = ["Digital", "Cloud", "Application","AI", "Data", "AI Workflow Automation", "CyberSecurity", "Cost Optimization"];
+const heroImages = [heroDigital, heroCloud, heroApplication,heroAi, heroData, aiworkflowImg, cyberSecurityImg, costOptimizeImg];
 
 export const HeroSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -84,7 +87,8 @@ export const HeroSection = () => {
               />
               <span className="absolute -bottom-1 left-0 w-full h-1 gradient-primary rounded-full" />
             </span>
-            <span className="text-secondary ml-4">transformation</span>
+            <span className="text-secondary ml-4">
+              Transformation</span>
           </motion.h1>
 
            <motion.p
@@ -93,7 +97,7 @@ export const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-sm md:text-base tracking-[0.3em] uppercase text-secondary/90 mb-8 font-semibold"
           >
-            Security-First • Intelligent Scalability • 24/7 Support
+            Secure by design • Intelligent Scalability • 24/7 Support
           </motion.p>
 
           <motion.div
