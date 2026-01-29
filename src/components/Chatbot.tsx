@@ -32,7 +32,7 @@ const Chatbot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Vi-3 Welcomes you! How can I assist you today?",
+      content: "Vi-3 Technologies Welcomes you! How can I assist?",
       timestamp: new Date()
     }
   ]);
@@ -113,6 +113,7 @@ RESPONSE GUIDELINES:
 6. EXAMPLES: Use concrete examples from relevant industries when helpful
 7. CALL-TO-ACTION: End with helpful next steps or questions
 8. RELEVANCE: Only mention services that directly relate to the user's question
+9. share contact us link if neccessory
 
 FORMATTING:
 - Use "•" for bullet points
@@ -123,7 +124,7 @@ OUT-OF-SCOPE TOPICS:
 For questions completely unrelated to business or technology (recipes, sports, entertainment, personal advice):
 Politely redirect: "I'm focused on helping with enterprise technology needs. Let me share what Vi-3 Technologies can do for your organization..." then briefly list relevant services.
 
-REMEMBER: You represent a B2B enterprise IT company with 58+ years of combined founder experience serving global enterprises. Be helpful, informative, and professional.`;
+REMEMBER: You represent a B2B enterprise IT company with 30+ years of combined founder experience serving global enterprises. Be helpful, informative, and professional.`;
   }, []);
 
   const scrollToBottom = () => {
@@ -491,7 +492,7 @@ REMEMBER: You represent a B2B enterprise IT company with 58+ years of combined f
                 </div>
                 <div className="flex-1">
                   <h3 className="font-bold text-base leading-tight">Vi-3 Technologies</h3>
-                  <p className="text-xs text-blue-100 mt-0.5">Enterprise IT Solutions</p>
+                  <p className="text-xs text-blue-100 mt-0.5">Innovative Enterprise IT Solutions</p>
                   <div className="flex items-center gap-1.5 mt-1">
                     <motion.span 
                       className="w-2 h-2 bg-emerald-400 rounded-full shadow-lg"
