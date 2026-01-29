@@ -4,9 +4,11 @@
 import {
   Accessibility,
   Box,
+  Briefcase,
   HeadphonesIcon,
   LucideIcon,
   MonitorIcon,
+  PlayCircle,
 } from "lucide-react";
 import {
   Shield,
@@ -144,6 +146,17 @@ import apiIntegrationImg from "@/assets/services/api-integration.jpg";
 import eucImg from "@/assets/services/end-user-computing.jpg";
 import firewallImg from "@/assets/services/firewall-service.jpg";
 import vpnImg from "@/assets/services/vpn-service.jpg";
+import aiSystemImg from "@/assets/services/ai-system-service.jpg";
+import secureAccessImg from "@/assets/services/secure-access.jpg";
+import pmoImg  from "@/assets/services/pmo-service.jpg";
+import secretManagementImg from  "@/assets/services/secret-management.jpg";
+import businessContinuityImg from  "@/assets/services/business-continuity.jpg";
+import freeConsultationImg from  "@/assets/services/project-management.jpg";
+import projectProgramImg from  "@/assets/services/project-program-service.jpg";
+import freeDemoImg from  "@/assets/services/free-demo.jpg";
+import dataEncryptionImg from "@/assets/services/data-encryption.jpg"
+
+
 // Type Definitions
 export interface Service {
   icon: LucideIcon;
@@ -302,7 +315,7 @@ export const servicesConfig: Service[] = [
       "Continuous integration and delivery pipelines with infrastructure as code and automated deployment workflows.",
     gradient: "from-emerald-500/20 to-green-500/5",
     slug: "devops",
-    category: ["Core", "DevOps & Engineering"],
+    category: ["Core", "DevOps & DevSecops"],
     keywords: [
       "DevOps",
       "CI/CD",
@@ -334,7 +347,7 @@ export const servicesConfig: Service[] = [
       "Modern engineering practices with containerization, Kubernetes orchestration, and security-integrated CI/CD pipelines.",
     image: devsecopsImg,
     gradient: "from-emerald-500/20 to-green-500/5",
-    category: "Core",
+    category: ["Core", "DevOps & DevSecops"],
     keywords: [
       "DevSecOps",
       "security automation",
@@ -597,6 +610,29 @@ export const servicesConfig: Service[] = [
       "safe AI deployment",
     ],
   },
+    // AI & Automation
+{
+  icon: Brain,
+  title: "AI System Services",
+  slug: "ai-system-services",
+  description:
+    "Design, development, and deployment of scalable AI systems including LLM-based solutions, AI agents, and intelligent automation.",
+  image: aiSystemImg,
+  gradient: "from-accent/20 to-purple-500/5",
+  category: "AI & Automation",
+  keywords: [
+    "AI systems",
+    "artificial intelligence",
+    "AI automation",
+    "LLM systems",
+    "AI agents",
+    "enterprise AI",
+    "generative AI",
+    "machine learning systems",
+    "AI orchestration",
+    "AI deployment",
+  ],
+},
 
   // Data & Analytics
   {
@@ -741,7 +777,31 @@ export const servicesConfig: Service[] = [
       "data archiving",
     ],
   },
+  {
+  icon: Lock,
+  title: "Data Encryption",
+  slug: "data-encryption",
+  description:
+    "Enterprise-grade data encryption solutions securing sensitive information across storage, transit, and processing layers.",
+  image: dataEncryptionImg,
+  gradient: "from-blue-500/20 to-cyan-500/5",
+  category: "Data & Analytics",
+  keywords: [
+    "data encryption",
+    "data security",
+    "encryption at rest",
+    "encryption in transit",
+    "end-to-end encryption",
+    "AES encryption",
+    "RSA encryption",
+    "cryptography",
+    "data privacy",
+    "data protection",
+    "compliance security",
+  ],
+},
 
+//devops
   {
     icon: Layers,
     title: "Architecture & Engineering",
@@ -750,7 +810,7 @@ export const servicesConfig: Service[] = [
       "System design with cloud-native, event-driven, and security-first architectures.",
     image: architectureImg,
     gradient: "from-sky-500/20 to-blue-500/5",
-    category: "DevOps & Engineering",
+    category: "DevOps & DevSecops",
     keywords: [
       "system architecture",
       "solution architecture",
@@ -777,7 +837,7 @@ export const servicesConfig: Service[] = [
       "Automated CI/CD pipelines for rapid, reliable, and secure software delivery.",
     image: cicdImg,
     gradient: "from-sky-500/20 to-blue-500/5",
-    category: "DevOps & Engineering",
+    category: "DevOps & DevSecops",
     keywords: [
       "CI/CD pipeline",
       "continuous integration",
@@ -804,7 +864,7 @@ export const servicesConfig: Service[] = [
       "Seamless integration and deployment services for modern applications and infrastructure.",
     image: integrationImg,
     gradient: "from-sky-500/20 to-blue-500/5",
-    category: "DevOps & Engineering",
+    category: "DevOps & DevSecops",
     keywords: [
       "integration",
       "deployment",
@@ -823,6 +883,8 @@ export const servicesConfig: Service[] = [
       "deployment strategies",
     ],
   },
+ 
+
 
   // High-Tech Solutions
   {
@@ -1187,7 +1249,75 @@ export const servicesConfig: Service[] = [
       "IT consolidation",
       "integration strategy",
     ],
-  },
+  },// Business Services
+{
+  icon: Briefcase,
+  title: "PMO Services",
+  slug: "pmo-services",
+  description:
+    "Project Management Office services providing governance, standards, and visibility across enterprise initiatives.",
+  image: pmoImg,
+  gradient: "from-orange-500/20 to-amber-500/5",
+  category: "Business",
+  keywords: [
+    "PMO",
+    "project management office",
+    "delivery governance",
+    "portfolio management",
+    "project controls",
+    "enterprise PMO",
+    "agile PMO",
+  ],
+},
+
+
+
+
+{
+  icon: Layers,
+  title: "Project & Program Management",
+  slug: "project-program-management",
+  description:
+    "Integrated project and program management services aligning delivery execution with strategic business objectives.",
+  image: projectProgramImg,
+  gradient: "from-orange-500/20 to-amber-500/5",
+  category: "Business",
+  keywords: [
+    "project management",
+    "program management",
+    "project delivery",
+    "program delivery",
+    "multi-project management",
+    "strategic programs",
+    "delivery governance",
+    "benefits realization",
+    "risk management",
+    "stakeholder management",
+    "enterprise delivery",
+  ],
+},
+
+{
+  icon: Activity,
+  title: "Business Continuity",
+  slug: "business-continuity",
+  description:
+    "Business continuity planning and resilience frameworks to ensure uninterrupted operations during disruptions.",
+  image: businessContinuityImg,
+  gradient: "from-red-500/20 to-rose-500/5",
+  category: "Business",
+  keywords: [
+    "business continuity",
+    "BCP",
+    "disaster recovery",
+    "operational resilience",
+    "risk mitigation",
+    "incident response",
+    "continuity planning",
+  ],
+},
+
+
 
   // digital Transformation
   {
@@ -1874,6 +2004,52 @@ export const servicesConfig: Service[] = [
     ],
   },
 
+{
+  icon: Shield,
+  title: "Remote Secure Access",
+  slug: "secure-access",
+  description:
+    "Enterprise-grade secure access solutions enabling identity-based access control and zero-trust security across systems.",
+  image: secureAccessImg,
+  gradient: "from-emerald-500/20 to-teal-500/5",
+  category: "Cybersecurity",
+  keywords: [
+    "secure access",
+    "identity access management",
+    "IAM",
+    "zero trust security",
+    "access control",
+    "authentication",
+    "authorization",
+    "cybersecurity",
+    "enterprise security",
+  ],
+},
+{
+  icon: Lock,
+  title: "Secret Management",
+  slug: "secret-management",
+  description:
+    "Centralized secret management solutions to securely store, rotate, and control access to credentials, keys, and sensitive secrets.",
+  image: secretManagementImg,
+  gradient: "from-emerald-500/20 to-teal-500/5",
+  category: "Cybersecurity",
+  keywords: [
+    "secret management",
+    "credential management",
+    "key management",
+    "API key management",
+    "password vault",
+    "encryption keys",
+    "PKI integration",
+    "secure secrets",
+    "zero trust security",
+    "access governance",
+    "cybersecurity",
+  ],
+},
+
+
   // IT Infrastructure Category
   {
     icon: Gauge,
@@ -2465,6 +2641,53 @@ export const servicesConfig: Service[] = [
       "improvement cycle",
     ],
   },
+
+
+
+
+
+
+
+
+// Value Add
+{
+  icon: Headphones,
+  title: "Free Consultation",
+  slug: "free-consultation",
+  description:
+    "Complimentary expert consultation to understand your challenges and recommend the right technology solutions.",
+  image: freeConsultationImg,
+  gradient: "from-violet-500/20 to-purple-500/5",
+  category: "Value Add",
+  keywords: [
+    "free consultation",
+    "expert advisory",
+    "technology consultation",
+    "solution assessment",
+    "IT consulting",
+    "pre-sales consultation",
+  ],
+},
+
+{
+  icon: PlayCircle,
+  title: "Free Demo",
+  slug: "free-demo",
+  description:
+    "Live product and solution demonstrations showcasing real-world use cases and capabilities at no cost.",
+  image: freeDemoImg,
+  gradient: "from-fuchsia-500/20 to-pink-500/5",
+  category: "Value Add",
+  keywords: [
+    "free demo",
+    "product demo",
+    "solution demo",
+    "live demonstration",
+    "proof of concept",
+    "technology showcase",
+  ],
+},
+
 ];
 
 // Categories Configuration
@@ -2485,7 +2708,7 @@ export const categoriesConfig: Category[] = [
     id: "data-analytics",
   },
   {
-    name: "DevOps & Engineering",
+    name: "DevOps & DevSecops",
     description: "Modern development and operations",
     id: "devops-engineering",
   },
@@ -2542,7 +2765,7 @@ export const categoryIdMap: Record<string, string> = {
   Core: "core",
   "AI & Automation": "ai-automation",
   "Data & Analytics": "data-analytics",
-  "DevOps & Engineering": "devops-engineering",
+  "DevOps & DevSecops": "devops-engineering",
   "High-Tech Industry 4.0": "hightech-solutions",
   "Security & Quality": "security-quality",
   Business: "business-services",

@@ -111,6 +111,16 @@ const servicePageMap: Record<string, () => Promise<any>> = {
   "end-user-computing": () => import("./pages/services/EndUserComputing"),
    "vpn-services" : () => import("./pages/services/VPNServices"),
    "firewall-services" : () => import("./pages/services/FirewallServices"),
+   "ai-system-services" :  () => import("./pages/services/AISystemService"),
+  "secure-access" :  () => import("./pages/services/SecureAccess"),
+  "data-encryption"  :  () => import("./pages/services/DataEncryption"),
+  "secret-management"   :  () => import("./pages/services/SecretManagement"),
+  "pmo-services"  :  () => import("./pages/services/PMO"),
+  "project-program-management"  :  () => import("./pages/services/ProjectProgramService"),
+  "business-continuity"  :  () => import("./pages/services/BusinessContinuity"),
+   "free-consultation" :  () => import("./pages/services/FreeConsultation"),
+   "free-demo":  () => import("./pages/services/FreeDemo"),
+
 };
 
 // Create lazy-loaded service components
