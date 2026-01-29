@@ -96,7 +96,7 @@ import erpImg from "@/assets/services/erp-service.jpg";
 import gccImg from "@/assets/services/gcc-service.jpg";
 import cloudOrchestrationImg from "@/assets/services/cloud-orchestration-service.jpg";
 import cloudAdoptionImg from "@/assets/services/cloud-adoption-service.jpg";
-import cloudSecureImg from "@/assets/services/cloud-migration-service.jpg";
+import cloudSecureImg from "@/assets/services/deployment-migration-service.jpg";
 import cloudModernizationImg from "@/assets/services/cloud-modernization-service.jpg";
 import cloudCostOptimizationImg from "@/assets/services/cloud-cost-service.jpg";
 import cloudSecurityImg from "@/assets/services/cloud-security-service.jpg";
@@ -1275,8 +1275,8 @@ export const servicesConfig: Service[] = [
 
 {
   icon: Layers,
-  title: "Project & Program Management",
-  slug: "project-program-management",
+  title: "Project & Program Services",
+  slug: "project-program-services",
   description:
     "Integrated project and program management services aligning delivery execution with strategic business objectives.",
   image: projectProgramImg,
@@ -2210,7 +2210,7 @@ export const servicesConfig: Service[] = [
   },
   {
     icon: DatabaseBackup,
-    title: "Backup & Restore",
+    title: "Data Backup & Restore",
     slug: "backup-restore",
     description: "Enterprise backup solutions and recovery services.",
     image: backupRestoreImg,
@@ -2264,7 +2264,7 @@ export const servicesConfig: Service[] = [
   },
   {
     icon: Truck,
-    title: "Deployment, Upgradation & Migration",
+    title: "Host Deployment & Migration",
     slug: "deployment-migration",
     description: "Infrastructure deployment and migration services.",
     image: deploymentImg,
@@ -2289,7 +2289,7 @@ export const servicesConfig: Service[] = [
   },
   {
     icon: Server,
-    title: "Data Center",
+    title: "Data Center Management",
     slug: "data-center",
     description: "Data center design, build, and management.",
     image: dataCenterConsolidationImg,
@@ -2316,7 +2316,7 @@ export const servicesConfig: Service[] = [
   },
   {
     icon: Box,
-    title: "Workload Deployment",
+    title: "Workload Management",
     slug: "workload-deployment",
     description:
       "End-to-end workload deployment across on-prem, cloud, and hybrid environments ensuring scalability, reliability, and performance optimization.",
@@ -2324,6 +2324,7 @@ export const servicesConfig: Service[] = [
     gradient: "from-indigo-500/20 to-violet-500/5",
     category: "Enterprise IT Infrastructure",
     keywords: [
+      "Workload Management",
       "workload deployment",
       "application deployment",
       "cloud workload",
@@ -2383,7 +2384,7 @@ export const servicesConfig: Service[] = [
       "Secure and scalable API integration services enabling seamless system connectivity, data exchange, and platform interoperability.",
     image: apiIntegrationImg,
     gradient: "from-sky-500/20 to-blue-500/5",
-    category: "Enterprise IT Infrastructure",
+    category: ["DevOps & DevSecops"],
     keywords: [
       "API integration",
       "system integration",

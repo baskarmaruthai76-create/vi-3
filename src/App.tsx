@@ -116,7 +116,7 @@ const servicePageMap: Record<string, () => Promise<any>> = {
   "data-encryption"  :  () => import("./pages/services/DataEncryption"),
   "secret-management"   :  () => import("./pages/services/SecretManagement"),
   "pmo-services"  :  () => import("./pages/services/PMO"),
-  "project-program-management"  :  () => import("./pages/services/ProjectProgramService"),
+  "project-program-services"  :  () => import("./pages/services/ProjectProgramService"),
   "business-continuity"  :  () => import("./pages/services/BusinessContinuity"),
    "free-consultation" :  () => import("./pages/services/FreeConsultation"),
    "free-demo":  () => import("./pages/services/FreeDemo"),
