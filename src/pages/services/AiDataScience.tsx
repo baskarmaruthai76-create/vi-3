@@ -1,5 +1,5 @@
 import { ServicePageLayout } from "@/components/ServicePageLayout";
-import aiDataScienceImg from "@/assets/images/ai-data-science.jpg";
+import aiDataScienceImg from "@/assets/services/aiImage.png";
 
 const AIDataScience = () => {
   return (

@@ -39,6 +39,10 @@ const partners = [
     logo: accunox
   },
   { 
+    name: "CoreStack", 
+    logo: corestack, 
+  },
+  { 
     name: "Google Cloud", 
     logo: "https://www.vectorlogo.zone/logos/google_cloud/google_cloud-ar21.svg"
   },
@@ -50,10 +54,7 @@ const partners = [
     name: "AWS", 
     logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
   },
-  { 
-    name: "CoreStack", 
-    logo: corestack, 
-  },
+  
   { 
     name: "Databricks", 
     logo: databricks

@@ -70,7 +70,7 @@ export const WhatSetsusApart = () => {
             className="inline-flex items-center gap-2 mb-6 px-5 py-2 rounded-full bg-primary/10 border border-primary/20"
           >
             <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-primary text-md font-semibold tracking-wide">Why Choose Vi-3</span>
+            <span className="text-primary text-md font-semibold tracking-wide">Why Choose Vi-3 Technologies</span>
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">

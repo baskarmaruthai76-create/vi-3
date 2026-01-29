@@ -66,6 +66,7 @@ import {
 import managedServicesImg from "@/assets/services/cloud-managed.jpg";
 import cybersecurityImg from "@/assets/services/cybersecurity.jpg";
 import aiDataScienceImg from "@/assets/services/ai-services.jpg";
+import aiImg from "@/assets/services/aiImage.png";
 import cloudInfrastructureImg from "@/assets/services/cloud-solutions.jpg";
 import quantumComputingImg from "@/assets/services/quantum.jpg";
 import aiGovernanceImg from "@/assets/services/ai-governance.jpg";
@@ -184,7 +185,7 @@ export const servicesConfig: Service[] = [
     slug: "artificial-intelligence",
     description:
       "Production-grade AI systems leveraging LLMs, agents, and automation to drive intelligent decision-making and real business outcomes.",
-    image: aiDataScienceImg,
+    image: aiImg,
     gradient: "from-accent/20 to-purple-500/5",
     category: "Core",
     keywords: [
@@ -2264,7 +2265,7 @@ export const servicesConfig: Service[] = [
   },
   {
     icon: Truck,
-    title: "Host Deployment & Migration",
+    title: "Hosting Deployment & Migration",
     slug: "deployment-migration",
     description: "Infrastructure deployment and migration services.",
     image: deploymentImg,
@@ -2336,26 +2337,26 @@ export const servicesConfig: Service[] = [
       "compute deployment",
     ],
   },
-  {
-    icon: Wrench,
-    title: "Data Center Support",
-    slug: "datacenter-support",
-    description:
-      "Comprehensive data center support services covering operations, maintenance, monitoring, and infrastructure lifecycle management.",
-    image: dataCenterSupportImg,
-    gradient: "from-orange-500/20 to-amber-500/5",
-    category: "Enterprise IT Infrastructure",
-    keywords: [
-      "data center support",
-      "datacenter operations",
-      "DC support",
-      "infrastructure maintenance",
-      "facility management",
-      "data center monitoring",
-      "hardware support",
-      "enterprise data center",
-    ],
-  },
+  // {
+  //   icon: Wrench,
+  //   title: "Data Center Support",
+  //   slug: "datacenter-support",
+  //   description:
+  //     "Comprehensive data center support services covering operations, maintenance, monitoring, and infrastructure lifecycle management.",
+  //   image: dataCenterSupportImg,
+  //   gradient: "from-orange-500/20 to-amber-500/5",
+  //   category: "Enterprise IT Infrastructure",
+  //   keywords: [
+  //     "data center support",
+  //     "datacenter operations",
+  //     "DC support",
+  //     "infrastructure maintenance",
+  //     "facility management",
+  //     "data center monitoring",
+  //     "hardware support",
+  //     "enterprise data center",
+  //   ],
+  // },
   {
     icon: Cloud,
     title: "Hosting Services",

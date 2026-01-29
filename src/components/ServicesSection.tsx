@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { FadeInUp, StaggerContainer } from "@/components/ui/motion";
 import { Link } from "react-router-dom";
 
-import aiImg from "@/assets/services/ai-services.jpg";
+import aiImg from "@/assets/services/aiImage.png";
 import datascience from "@/assets/services/data-science.jpg";
 import cloudImg from "@/assets/services/cloud-solutions.jpg";
 import managedImg from "@/assets/services/cloud-managed.jpg";

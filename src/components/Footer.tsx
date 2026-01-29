@@ -99,7 +99,7 @@ export const Footer = () => {
             <img src={logo} alt="Vi-3 Technology" className="w-12 h-12" />
           </a>
               <span className="text-xl font-bold text-foreground">
-                <span className="text-primary -ml-2">-3 Technology</span>
+                <span className="text-primary -ml-2">Vi-3 Technologies </span>
               </span>
             </a>
             <p className="text-muted-foreground text-sm mb-6 max-w-sm">
