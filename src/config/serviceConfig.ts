@@ -151,7 +151,7 @@ import secureAccessImg from "@/assets/services/secure-access.jpg";
 import pmoImg  from "@/assets/services/pmo-service.jpg";
 import secretManagementImg from  "@/assets/services/secret-management.jpg";
 import businessContinuityImg from  "@/assets/services/business-continuity.jpg";
-import freeConsultationImg from  "@/assets/services/project-management.jpg";
+import freeConsultationImg from  "@/assets/services/free-consultation.jpg";
 import projectProgramImg from  "@/assets/services/project-program-service.jpg";
 import freeDemoImg from  "@/assets/services/free-demo.jpg";
 import dataEncryptionImg from "@/assets/services/data-encryption.jpg"
