@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Briefcase, GraduationCap, Award, Sparkles, TrendingUp } from 'lucide-react';
+import gkphoto from "@/assets/founder/gkphoto.jpeg";
+import baskarphoto from "@/assets/founder/baskarphoto.jpeg";
 
 const StaggerContainer = ({ children, className }) => {
   return (
@@ -183,10 +185,12 @@ const StatItem = ({ value, suffix, label, sublabel, delay }) => {
                   {/* Header */}
                   <div className={`flex flex-col md:flex-row items-start gap-6 mb-6 relative z-10`}>
                     <div className="relative mx-auto sm:mx-0">
-                      <div className="w-24 h-24 rounded-2xl bg-transparent  flex items-center justify-center flex-shrink-0  shadow-purple-500/30 group-hover:shadow-purple-500/50 transition-all duration-300 group-hover:scale-105">
-                        <span className="text-3xl font-bold text-primary">
-                           {founder.name === "Gajendrakumar PK" ? "GK" : "BM"}
-                        </span>
+                      <div className="w-24 h-24 rounded-2xl overflow-hidden flex-shrink-0 shadow-lg shadow-purple-500/30 group-hover:shadow-purple-500/50 transition-all duration-300 group-hover:scale-105 border-2 border-slate-200 group-hover:border-purple-300">
+                        <img 
+                          src={founder.name === "Gajendrakumar PK" ? gkphoto : baskarphoto} 
+                          alt={founder.name}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                       {/* Pulse ring */}
                       {/* <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-30 animate-ping" /> */}
@@ -281,4 +285,3 @@ const StatItem = ({ value, suffix, label, sublabel, delay }) => {
     </section>
   );
 }
-
