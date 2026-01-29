@@ -1,7 +1,6 @@
-
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useForm, ValidationError } from '@formspree/react';
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -14,8 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useToast } from "@/hooks/use-toast";
-import { MapPin, Phone, Mail, Clock, Send, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, ArrowRight, CheckCircle } from "lucide-react";
 import { SlideInLeft } from "@/components/ui/motion";
 import { servicesConfig } from "@/config/serviceConfig";
 
@@ -23,8 +21,7 @@ import { servicesConfig } from "@/config/serviceConfig";
 const services = servicesConfig.map(s => s.title).sort();
 
 const Contact = () => {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [state, handleSubmit] = useForm("xkobrvpb");
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -35,25 +32,20 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    toast({
-      title: "Message Sent Successfully!",
-      description: "We'll get back to you within 24 hours.",
-    });
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      company: "",
-      phone: "",
-      service: "",
-      message: "",
-    });
-    setIsSubmitting(false);
-  };
+  // Reset form after successful submission
+  useEffect(() => {
+    if (state.succeeded) {
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        company: "",
+        phone: "",
+        service: "",
+        message: "",
+      });
+    }
+  }, [state.succeeded]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -189,151 +181,216 @@ const Contact = () => {
                 whileHover={{scale: 1.02, transition: { duration: 0.2 }}}
               >
                 <div className="bg-card p-8 md:p-10 rounded-2xl border border-border shadow-2xl">
-                  <h2 className="text-2xl font-bold text-foreground mb-6">
-                    Send Us a Message
-                  </h2>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-sm font-medium text-foreground mb-2">
-                          First Name *
-                        </label>
-                        <Input
-                          required
-                          value={formData.firstName}
-                          onChange={(e) =>
-                            setFormData({ ...formData, firstName: e.target.value })
-                          }
-                          placeholder="John"
-                          className="bg-background"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-foreground mb-2">
-                          Last Name *
-                        </label>
-                        <Input
-                          required
-                          value={formData.lastName}
-                          onChange={(e) =>
-                            setFormData({ ...formData, lastName: e.target.value })
-                          }
-                          placeholder="Doe"
-                          className="bg-background"
-                        />
-                      </div>
+                  {state.succeeded ? (
+                    <div className="text-center py-12">
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ type: "spring", duration: 0.5 }}
+                      >
+                        <CheckCircle className="w-20 h-20 text-green-500 mx-auto mb-6" />
+                      </motion.div>
+                      <h2 className="text-3xl font-bold text-foreground mb-4">
+                        Message Sent Successfully!
+                      </h2>
+                      <p className="text-muted-foreground text-lg mb-8">
+                        Thank you for reaching out. We'll get back to you within 24 hours.
+                      </p>
+                      <Button
+                        onClick={() => window.location.reload()}
+                        className="gradient-primary text-primary-foreground"
+                      >
+                        Send Another Message
+                      </Button>
                     </div>
+                  ) : (
+                    <>
+                      <h2 className="text-2xl font-bold text-foreground mb-6">
+                        Send Us a Message
+                      </h2>
+                      <form onSubmit={handleSubmit} className="space-y-6">
+                        <div className="grid md:grid-cols-2 gap-6">
+                          <div>
+                            <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
+                              First Name *
+                            </label>
+                            <Input
+                              id="firstName"
+                              name="firstName"
+                              required
+                              value={formData.firstName}
+                              onChange={(e) =>
+                                setFormData({ ...formData, firstName: e.target.value })
+                              }
+                              placeholder="John"
+                              className="bg-background"
+                            />
+                            <ValidationError 
+                              prefix="First Name" 
+                              field="firstName"
+                              errors={state.errors}
+                              className="text-red-500 text-sm mt-1"
+                            />
+                          </div>
+                          <div>
+                            <label htmlFor="lastName" className="block text-sm font-medium text-foreground mb-2">
+                              Last Name *
+                            </label>
+                            <Input
+                              id="lastName"
+                              name="lastName"
+                              required
+                              value={formData.lastName}
+                              onChange={(e) =>
+                                setFormData({ ...formData, lastName: e.target.value })
+                              }
+                              placeholder="Doe"
+                              className="bg-background"
+                            />
+                            <ValidationError 
+                              prefix="Last Name" 
+                              field="lastName"
+                              errors={state.errors}
+                              className="text-red-500 text-sm mt-1"
+                            />
+                          </div>
+                        </div>
 
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-sm font-medium text-foreground mb-2">
-                          Business Email Address *
-                        </label>
-                        <Input
-                          required
-                          type="email"
-                          value={formData.email}
-                          onChange={(e) =>
-                            setFormData({ ...formData, email: e.target.value })
-                          }
-                          placeholder="john@company.com"
-                          className="bg-background"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-foreground mb-2">
-                          Company
-                        </label>
-                        <Input
-                          value={formData.company}
-                          onChange={(e) =>
-                            setFormData({ ...formData, company: e.target.value })
-                          }
-                          placeholder="Your Company"
-                          className="bg-background"
-                        />
-                      </div>
-                    </div>
+                        <div className="grid md:grid-cols-2 gap-6">
+                          <div>
+                            <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                              Business Email Address *
+                            </label>
+                            <Input
+                              id="email"
+                              name="email"
+                              required
+                              type="email"
+                              value={formData.email}
+                              onChange={(e) =>
+                                setFormData({ ...formData, email: e.target.value })
+                              }
+                              placeholder="john@company.com"
+                              className="bg-background"
+                            />
+                            <ValidationError 
+                              prefix="Email" 
+                              field="email"
+                              errors={state.errors}
+                              className="text-red-500 text-sm mt-1"
+                            />
+                          </div>
+                          <div>
+                            <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
+                              Company
+                            </label>
+                            <Input
+                              id="company"
+                              name="company"
+                              value={formData.company}
+                              onChange={(e) =>
+                                setFormData({ ...formData, company: e.target.value })
+                              }
+                              placeholder="Your Company"
+                              className="bg-background"
+                            />
+                          </div>
+                        </div>
 
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-sm font-medium text-foreground mb-2">
-                          Phone Number
-                        </label>
-                        <Input
-                          type="tel"
-                          value={formData.phone}
-                          onChange={(e) =>
-                            setFormData({ ...formData, phone: e.target.value })
-                          }
-                          placeholder="+91 98765 43210"
-                          className="bg-background"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-foreground mb-2">
-                          Service of Interest
-                        </label>
-                        <Select
-                          value={formData.service}
-                          onValueChange={(value) =>
-                            setFormData({ ...formData, service: value })
-                          }
+                        <div className="grid md:grid-cols-2 gap-6">
+                          <div>
+                            <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+                              Phone Number
+                            </label>
+                            <Input
+                              id="phone"
+                              name="phone"
+                              type="tel"
+                              value={formData.phone}
+                              onChange={(e) =>
+                                setFormData({ ...formData, phone: e.target.value })
+                              }
+                              placeholder="+91 98765 43210"
+                              className="bg-background"
+                            />
+                          </div>
+                          <div>
+                            <label htmlFor="service" className="block text-sm font-medium text-foreground mb-2">
+                              Service of Interest
+                            </label>
+                            <Select
+                              name="service"
+                              value={formData.service}
+                              onValueChange={(value) =>
+                                setFormData({ ...formData, service: value })
+                              }
+                            >
+                              <SelectTrigger className="bg-background">
+                                <SelectValue placeholder="Select a service" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                {services.map((service) => (
+                                  <SelectItem key={service} value={service}>
+                                    {service}
+                                  </SelectItem>
+                                ))}
+                              </SelectContent>
+                            </Select>
+                            {/* Hidden input to send service value to Formspree */}
+                            <input type="hidden" name="service" value={formData.service} />
+                          </div>
+                        </div>
+                        
+                        <div>
+                          <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                            Message *
+                          </label>
+                          <Textarea
+                            id="message"
+                            name="message"
+                            required
+                            value={formData.message}
+                            onChange={(e) =>
+                              setFormData({ ...formData, message: e.target.value })
+                            }
+                            placeholder="Tell us about your project or requirements..."
+                            rows={5}
+                            className="bg-background resize-none"
+                          />
+                          <ValidationError 
+                            prefix="Message" 
+                            field="message"
+                            errors={state.errors}
+                            className="text-red-500 text-sm mt-1"
+                          />
+                        </div>
+
+                        <Button 
+                          type="submit" 
+                          disabled={state.submitting}
+                          className="w-full gap-2 gradient-primary text-primary-foreground font-semibold py-6"
                         >
-                          <SelectTrigger className="bg-background">
-                            <SelectValue placeholder="Select a service" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            {services.map((service) => (
-                              <SelectItem key={service} value={service}>
-                                {service}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">
-                        Message *
-                      </label>
-                      <Textarea
-                        required
-                        value={formData.message}
-                        onChange={(e) =>
-                          setFormData({ ...formData, message: e.target.value })
-                        }
-                        placeholder="Tell us about your project or requirements..."
-                        rows={5}
-                        className="bg-background resize-none"
-                      />
-                    </div>
+                          {state.submitting ? (
+                            <motion.div
+                              animate={{ rotate: 360 }}
+                              transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                              className="w-5 h-5 border-2 border-primary-foreground border-t-transparent rounded-full"
+                            />
+                          ) : (
+                            <>
+                              <Send size={18} />
+                              Send Message
+                            </>
+                          )}
+                        </Button>
 
-                    <Button 
-                      type="submit" 
-                      disabled={isSubmitting}
-                      className="w-full gap-2 gradient-primary text-primary-foreground font-semibold py-6"
-                    >
-                      {isSubmitting ? (
-                        <motion.div
-                          animate={{ rotate: 360 }}
-                          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                          className="w-5 h-5 border-2 border-primary-foreground border-t-transparent rounded-full"
-                        />
-                      ) : (
-                        <>
-                          <Send size={18} />
-                          Send Message
-                        </>
-                      )}
-                    </Button>
-
-                    <p className="text-xs text-muted-foreground text-center">
-                      By submitting this form, you agree to our{" "}
-                      <a href="/privacy" className="text-primary hover:underline">Privacy Policy</a>
-                    </p>
-                  </form>
+                        <p className="text-xs text-muted-foreground text-center">
+                          By submitting this form, you agree to our{" "}
+                          <a href="/privacy" className="text-primary hover:underline">Privacy Policy</a>
+                        </p>
+                      </form>
+                    </>
+                  )}
                 </div>
               </motion.div>
             </div>
