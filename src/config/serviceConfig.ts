@@ -372,7 +372,7 @@ export const servicesConfig: Service[] = [
   },
   {
     icon: Server,
-    title: "Enterprise IT Infrastructure",
+    title: "Enterprise Enterprise IT Infrastructure",
     slug: "it-infrastructure",
     description:
       "Robust and scalable infrastructure foundations covering compute, storage, networking, and enterprise systems reliability.",
@@ -380,7 +380,7 @@ export const servicesConfig: Service[] = [
     gradient: "from-slate-500/20 to-gray-500/5",
     category: "Core",
     keywords: [
-      "IT infrastructure",
+      "Enterprise IT Infrastructure",
       "infrastructure",
       "servers",
       "storage",
@@ -1140,7 +1140,7 @@ export const servicesConfig: Service[] = [
   },
   {
     icon: Lock,
-    title: "Vulnerability Scanning",
+    title: "Vulnerability Assessment",
     slug: "vulnerability-scanning",
     description:
       "Continuous vulnerability detection and remediation with automated scanning and threat intelligence.",
@@ -1148,7 +1148,7 @@ export const servicesConfig: Service[] = [
     gradient: "from-orange-500/20 to-red-500/5",
     category: "Security & Quality",
     keywords: [
-      "vulnerability scanning",
+      "vulnerability Assessment",
       "vulnerability management",
       "security scanning",
       "vulnerability assessment",
@@ -2050,7 +2050,7 @@ export const servicesConfig: Service[] = [
 },
 
 
-  // IT Infrastructure Category
+  // Enterprise IT Infrastructure Category
   {
     icon: Gauge,
     title: "Technology Advisory",
@@ -2058,7 +2058,7 @@ export const servicesConfig: Service[] = [
     description: "Strategic technology consulting and advisory services.",
     image: technologyAdvisoryImg,
     gradient: "from-blue-500/20 to-indigo-500/5",
-    category: "IT Infrastructure",
+    category: "Enterprise IT Infrastructure",
     keywords: [
       "technology advisory",
       "IT consulting",
@@ -2083,7 +2083,7 @@ export const servicesConfig: Service[] = [
     description: "Server infrastructure design, deployment, and management.",
     image: serversImg,
     gradient: "from-slate-500/20 to-gray-500/5",
-    category: "IT Infrastructure",
+    category: "Enterprise IT Infrastructure",
     keywords: [
       "servers",
       "server management",
@@ -2109,7 +2109,7 @@ export const servicesConfig: Service[] = [
     description: "Enterprise storage solutions and data management.",
     image: storageImg,
     gradient: "from-cyan-500/20 to-blue-500/5",
-    category: "IT Infrastructure",
+    category: "Enterprise IT Infrastructure",
     keywords: [
       "storage",
       "data storage",
@@ -2137,7 +2137,7 @@ export const servicesConfig: Service[] = [
     description: "Data center optimization and consolidation strategies.",
     image: dataCenterImg,
     gradient: "from-orange-500/20 to-amber-500/5",
-    category: "IT Infrastructure",
+    category: "Enterprise IT Infrastructure",
     keywords: [
       "data center consolidation",
       "DC consolidation",
@@ -2159,7 +2159,7 @@ export const servicesConfig: Service[] = [
     description: "Enterprise networking design and implementation.",
     image: networkingImg,
     gradient: "from-green-500/20 to-emerald-500/5",
-    category: "IT Infrastructure",
+    category: "Enterprise IT Infrastructure",
     keywords: [
       "networking",
       "network infrastructure",
@@ -2187,7 +2187,7 @@ export const servicesConfig: Service[] = [
     description: "Database administration, optimization, and migration.",
     image: databaseImg,
     gradient: "from-purple-500/20 to-indigo-500/5",
-    category: "IT Infrastructure",
+    category: "Enterprise IT Infrastructure",
     keywords: [
       "database",
       "database management",
@@ -2215,7 +2215,7 @@ export const servicesConfig: Service[] = [
     description: "Enterprise backup solutions and recovery services.",
     image: backupRestoreImg,
     gradient: "from-teal-500/20 to-cyan-500/5",
-    category: "IT Infrastructure",
+    category: "Enterprise IT Infrastructure",
     keywords: [
       "backup",
       "restore",
@@ -2242,7 +2242,7 @@ export const servicesConfig: Service[] = [
     description: "DR planning, implementation, and testing.",
     image: disasterRecoveryImg,
     gradient: "from-red-500/20 to-orange-500/5",
-    category: "IT Infrastructure",
+    category: "Enterprise IT Infrastructure",
     keywords: [
       "disaster recovery",
       "DR",
@@ -2269,7 +2269,7 @@ export const servicesConfig: Service[] = [
     description: "Infrastructure deployment and migration services.",
     image: deploymentImg,
     gradient: "from-indigo-500/20 to-violet-500/5",
-    category: "IT Infrastructure",
+    category: "Enterprise IT Infrastructure",
     keywords: [
       "deployment",
       "upgradation",
@@ -2294,7 +2294,7 @@ export const servicesConfig: Service[] = [
     description: "Data center design, build, and management.",
     image: dataCenterConsolidationImg,
     gradient: "from-blue-500/20 to-sky-500/5",
-    category: "IT Infrastructure",
+    category: "Enterprise IT Infrastructure",
     keywords: [
       "data center",
       "datacenter",
@@ -2322,7 +2322,7 @@ export const servicesConfig: Service[] = [
       "End-to-end workload deployment across on-prem, cloud, and hybrid environments ensuring scalability, reliability, and performance optimization.",
     image: workloadDeploymentImg,
     gradient: "from-indigo-500/20 to-violet-500/5",
-    category: "IT Infrastructure",
+    category: "Enterprise IT Infrastructure",
     keywords: [
       "workload deployment",
       "application deployment",
@@ -2343,7 +2343,7 @@ export const servicesConfig: Service[] = [
       "Comprehensive data center support services covering operations, maintenance, monitoring, and infrastructure lifecycle management.",
     image: dataCenterSupportImg,
     gradient: "from-orange-500/20 to-amber-500/5",
-    category: "IT Infrastructure",
+    category: "Enterprise IT Infrastructure",
     keywords: [
       "data center support",
       "datacenter operations",
@@ -2363,7 +2363,7 @@ export const servicesConfig: Service[] = [
       "Secure and scalable managed hosting and cloud hosting solutions designed for high availability, performance, and cost efficiency.",
     image: hostingImg,
     gradient: "from-cyan-500/20 to-blue-500/5",
-    category: "IT Infrastructure",
+    category: "Enterprise IT Infrastructure",
     keywords: [
       "hosting services",
       "managed hosting",
@@ -2383,7 +2383,7 @@ export const servicesConfig: Service[] = [
       "Secure and scalable API integration services enabling seamless system connectivity, data exchange, and platform interoperability.",
     image: apiIntegrationImg,
     gradient: "from-sky-500/20 to-blue-500/5",
-    category: "IT Infrastructure",
+    category: "Enterprise IT Infrastructure",
     keywords: [
       "API integration",
       "system integration",
@@ -2735,7 +2735,7 @@ export const categoriesConfig: Category[] = [
   },
   {
     name: "Digital Transformation",
-    description: "Transform your organization",
+    description: "Transform your business",
     id: "digital-transformation",
   },
   {
@@ -2749,7 +2749,7 @@ export const categoriesConfig: Category[] = [
     id: "cybersecurity",
   },
   {
-    name: "IT Infrastructure",
+    name: "Enterprise IT Infrastructure",
     description: "Enterprise infrastructure solutions",
     id: "it-infrastructure",
   },
@@ -2773,7 +2773,7 @@ export const categoryIdMap: Record<string, string> = {
   "Cloud 3.0": "cloud-services",
   Management: "management",
   Cybersecurity: "cybersecurity",
-  "IT Infrastructure": "it-infrastructure",
+  "Enterprise IT Infrastructure": "it-infrastructure",
   "Value Add": "value-add-services",
 };
 
