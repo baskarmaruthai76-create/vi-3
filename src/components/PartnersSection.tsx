@@ -9,7 +9,10 @@ import salesforce from "@/assets/partners/salesforce.jpeg";
 import rsa from "@/assets/partners/rsa.jpeg";
 import databricks from "@/assets/partners/databricks.jpeg";
 import accunox from "@/assets/partners/accunox.jpeg";
-import corporatestack from "@/assets/partners/corporatestack.jpeg";
+import corestack from "@/assets/partners/corestack.jpeg";
+import crowdstrike from  "@/assets/partners/crowdstrike.jpeg";
+import nutanix from "@/assets/partners/nutanix.jpeg";
+import servicenow from "@/assets/partners/servicenow.jpeg";
 
 
 
@@ -28,7 +31,7 @@ const partners = [
     {name: "RSA", logo: rsa},
   { 
     name: "Nutanix", 
-    logo: "https://logos-world.net/wp-content/uploads/2022/04/Nutanix-Logo.png"
+    logo: nutanix
   },
  
   { 
@@ -49,7 +52,8 @@ const partners = [
   },
   { 
     name: "CoreStack", 
-    logo: corporatestack},
+    logo: corestack, 
+  },
   { 
     name: "Databricks", 
     logo: databricks
@@ -68,7 +72,7 @@ const partners = [
   },
   { 
     name: "ServiceNow", 
-    logo: "https://www.vectorlogo.zone/logos/servicenow/servicenow-ar21.svg"
+    logo: servicenow
   },
   { 
     name: "Workday", 
@@ -76,7 +80,7 @@ const partners = [
   },
   { 
     name: "CrowdStrike", 
-    logo: "https://logos-world.net/wp-content/uploads/2021/10/CrowdStrike-Logo.png"
+    logo: crowdstrike
   },
   { 
     name: "NetApp", 

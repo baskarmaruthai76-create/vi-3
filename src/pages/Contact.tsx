@@ -1,5 +1,4 @@
-// ===== UPDATED CONTACT PAGE =====
-// Contact.tsx - Using centralized services config
+
 
 import { useState } from "react";
 import { motion } from "framer-motion";
