@@ -185,7 +185,7 @@ const Contact = () => {
                     </div>
 
                     {/* Quick Contact Buttons */}
-                    <div className="grid grid-cols-2 gap-4 pt-4">
+                    {/* <div className="grid grid-cols-2 gap-4 pt-4">
                       <Button
                         onClick={() => window.open('https://wa.me/917010351330', '_blank')}
                         className="bg-[#25D366] hover:bg-[#20BA5A] text-white gap-2"
@@ -200,7 +200,7 @@ const Contact = () => {
                         <Linkedin size={18} />
                         LinkedIn
                       </Button>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </SlideInLeft>

@@ -155,7 +155,7 @@ export const ContactSection = () => {
                 </div>
 
                 {/* Quick Contact Buttons */}
-                <div className="grid grid-cols-2 gap-4 pt-4">
+                {/* <div className="grid grid-cols-2 gap-4 pt-4">
                   <Button
                     onClick={() => window.open('https://wa.me/917010351330', '_blank')}
                     className="bg-[#25D366] hover:bg-[#20BA5A] text-white gap-2"
@@ -170,7 +170,7 @@ export const ContactSection = () => {
                     <Linkedin size={18} />
                     LinkedIn
                   </Button>
-                </div>
+                </div> */}
 
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
