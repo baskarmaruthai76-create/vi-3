@@ -13,7 +13,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { MapPin, Phone, Mail, Clock, Send, ArrowRight, CheckCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, ArrowRight, CheckCircle, MessageCircle } from "lucide-react";
+import { Linkedin } from "lucide-react";
 import { SlideInLeft } from "@/components/ui/motion";
 import { servicesConfig } from "@/config/serviceConfig";
 
@@ -21,7 +22,7 @@ import { servicesConfig } from "@/config/serviceConfig";
 const services = servicesConfig.map(s => s.title).sort();
 
 const Contact = () => {
-  const [state, handleSubmit] = useForm("xkobrvpb");
+  const [state, handleSubmit] = useForm("xdazlzag");
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -121,7 +122,9 @@ const Contact = () => {
                       </div>
                       <div>
                         <h4 className="font-semibold text-foreground mb-1">Phone</h4>
-                        <p className="text-muted-foreground">+91-7010351330</p>
+                        <a href="tel:+917010351330" className="text-muted-foreground hover:text-primary transition-colors">
+                          +91-7010351330
+                        </a>
                       </div>
                     </div>
     
@@ -131,10 +134,46 @@ const Contact = () => {
                       </div>
                       <div>
                         <h4 className="font-semibold text-foreground mb-1">Email</h4>
-                        <p className="text-muted-foreground">contact@vi3technologies.com</p>
+                        <a href="mailto:contact@vi3technologies.com" className="text-muted-foreground hover:text-primary transition-colors">
+                          contact@vi3technologies.com
+                        </a>
                       </div>
                     </div>
-    
+
+                    {/* <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center shrink-0">
+                        <MessageCircle className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-1">WhatsApp</h4>
+                        <a 
+                          href="https://wa.me/999999999" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-primary transition-colors"
+                        >
+                          Chat with us on WhatsApp
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center shrink-0">
+                        <Linkedin className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-1">LinkedIn</h4>
+                        <a 
+                          href="https://in.linkedin.com/company/vi-3-technologies" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-primary transition-colors"
+                        >
+                          Connect on LinkedIn
+                        </a>
+                      </div>
+                    </div>
+     */}
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center shrink-0">
                         <Clock className="w-5 h-5 text-primary" />
@@ -143,6 +182,24 @@ const Contact = () => {
                         <h4 className="font-semibold text-foreground mb-1">Support</h4>
                         <p className="text-muted-foreground">24/7 Managed Services Available</p>
                       </div>
+                    </div>
+
+                    {/* Quick Contact Buttons */}
+                    <div className="grid grid-cols-2 gap-4 pt-4">
+                      <Button
+                        onClick={() => window.open('https://wa.me/917010351330', '_blank')}
+                        className="bg-[#25D366] hover:bg-[#20BA5A] text-white gap-2"
+                      >
+                        <MessageCircle size={18} />
+                        WhatsApp
+                      </Button>
+                      <Button
+                        onClick={() => window.open('https://www.linkedin.com/company/vi3technologies', '_blank')}
+                        className="bg-[#0A66C2] hover:bg-[#004182] text-white gap-2"
+                      >
+                        <Linkedin size={18} />
+                        LinkedIn
+                      </Button>
                     </div>
                   </div>
                 </div>
